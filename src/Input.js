@@ -2,7 +2,11 @@ import React from 'react';
 
 class Input extends React.Component {
 
-    state = {term: null};
+    state = {term: ''};
+
+    // onInputChange(event){
+    //     this.setState({term: event.target.value});
+    // }
 
     render(){
         return(

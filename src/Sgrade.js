@@ -5,7 +5,7 @@ class Sgrade extends React.Component {
         return(
             <div>
                 <input type = "checkbox" id= {this.props.sub} />
-                <label for = {this.props.sub}> {this.props.sub} </label>
+                <label > {this.props.sub} </label>
             </div>
             
         )
