@@ -4,6 +4,9 @@ import Form from './Form';
 
 class App extends React.Component {
 
+
+    
+
     render(){
         
         return (
@@ -12,12 +15,7 @@ class App extends React.Component {
                 <div>
                     <Form />
                 </div>
-                <div>
-                    Your SGPA is: {" "}
-                </div>
-                <div>
-                    Your CGPA is: {" "}
-                </div>
+                
             </div>
                 
 

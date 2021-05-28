@@ -5,7 +5,7 @@ import Sgrade from './Sgrade';
 
 var gp = [[0,4], [0,4], [0,4], [0,3], [0,2], [0,4]];
 var cg = [0,0];
-var sg = 0;
+
 class Form extends React.Component{
 
     state = {sgpa: '', cgpa: ''};
@@ -13,13 +13,22 @@ class Form extends React.Component{
 
     onFormSubmit = (event) => {
         event.preventDefault();
+        var tc = 0;
+        var sg = 0;
+        var c =0; 
 
         for(var i=0; i<gp.length; i++)
         {
             sg = sg + gp[i][0]*gp[i][1];
+            tc = tc+gp[i][1];
         }
-        this.setState({sgpa: sg});
+
+        sg = sg/tc;
+        var k = (cg[0]*cg[1]+sg*tc);
+        var total = parseInt(cg[1]) + tc;
+        c = k/total;
         
+        this.setState({sgpa: sg, cgpa: c});
     }
     onInputChange(term, value){
 
@@ -57,7 +66,6 @@ class Form extends React.Component{
     }
     crChange = (event) => {
         cg[1] = event.target.value;
-        console.log(cg);
     }
 
     onChecked(e, value){
@@ -121,6 +129,7 @@ class Form extends React.Component{
                 gp[5][1] = 4;
             }
         }
+        
     }
 
     render(){
@@ -135,7 +144,7 @@ class Form extends React.Component{
                         <Input onChange={this.onInputChange} name="CEN-108"/>
                     <div>
                         Your current CGPA {" "}
-                        <input onChange={this.cgChange} type="number" />
+                        <input step="any" onChange={this.cgChange} type="number" />
                     </div>
                     <div>
                         Credits earned without S grade {" "}
@@ -152,7 +161,13 @@ class Form extends React.Component{
                     </div>
                     <div>
                         <input type="Submit" />
-                        <input type="reset" />
+                        <input type="reset" onClick={e => this.setState({sgpa: '', cgpa: ''})} />
+                    </div>
+                    <div>
+                        Your SGPA is: {this.state.sgpa}
+                    </div>
+                    <div>
+                        Your CGPA is: {this.state.cgpa}
                     </div>
                 </form>
                 
