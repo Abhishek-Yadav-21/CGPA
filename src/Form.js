@@ -151,18 +151,18 @@ class Form extends React.Component{
                     </div>
                     <div className="cg">
                         <div>
-                            <label id="label1" htmlFor="cgpa">Your current CGPA</label>
+                            <label id="label1" htmlFor="cgpa"><h4>Your current CGPA:</h4></label>
                             <input id="cgpa" step="any" onChange={this.cgChange} type="number" />
                         </div>
                         <div>    
-                            <label id="label2" htmlFor="credits">Credits earned without S grade </label>
+                            <label id="label2" htmlFor="credits"><h4>Credits earned without S grade:</h4> </label>
                             <input id="credits" onChange={this.crChange} type="number"/>
                         </div>
                     </div>
                     
-                    <div className="inline field">
+                    {/* <div className="inline field"> */}
+                        <h3 id="h">Take S grade in:</h3>
                         <div className="ui checkbox">
-                        Take S grade in 
                             <Sgrade onCheck={this.onChecked} sub="BTN-202"/>
                             <Sgrade onCheck={this.onChecked} sub="BTN-204"/>
                             <Sgrade onCheck={this.onChecked} sub="BTN-206"/>
@@ -170,14 +170,16 @@ class Form extends React.Component{
                             <Sgrade onCheck={this.onChecked} sub="BTN-391"/>
                             <Sgrade onCheck={this.onChecked} sub="CEN-108"/>
                         </div>
+                    
+                    <div className="input">
+                        <input className="small ui button ui green button" type="Submit" value="Calculate"/>
+                        <input className="small ui button ui blue button" id="reset" type="reset" onClick={e => this.setState({sgpa: '', cgpa: ''})} />
                     </div>
-                    <div>
-                        <input type="Submit" />
-                        <input type="reset" onClick={e => this.setState({sgpa: '', cgpa: ''})} />
-                    </div>
-                    <div>
+                   
+                    
+                    <h3>
                         Your SGPA is: {this.state.sgpa}
-                    </div>
+                    </h3>
                     <div>
                         Your CGPA is: {this.state.cgpa}
                     </div>

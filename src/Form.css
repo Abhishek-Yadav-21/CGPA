@@ -15,3 +15,26 @@
     margin-bottom: 4px;
     margin-top: 13px;
 }
+
+#h{
+    margin-top: 13px;
+    margin-bottom: 13px;
+    display: block;
+    width: 100%;
+}
+div.ui.checkbox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+div.input{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+
+
