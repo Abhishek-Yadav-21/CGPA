@@ -134,30 +134,42 @@ class Form extends React.Component{
 
     render(){
         return(
-            <div>
-                <form onSubmit={this.onFormSubmit}>
+            <div className="ui container">
+                <form className="ui form" onSubmit={this.onFormSubmit}>
+                    <h3>
+                        Your grade in:
+                    </h3>
+                    <div className="grade">
                         <Input onChange={this.onInputChange} name="BTN-202"/>
                         <Input onChange={this.onInputChange} name="BTN-204"/>
                         <Input onChange={this.onInputChange} name="BTN-206"/>
+                    </div>
+                    <div className="grade">
                         <Input onChange={this.onInputChange} name="BTN-292"/>
                         <Input onChange={this.onInputChange} name="BTN-391"/>
                         <Input onChange={this.onInputChange} name="CEN-108"/>
-                    <div>
-                        Your current CGPA {" "}
-                        <input step="any" onChange={this.cgChange} type="number" />
                     </div>
-                    <div>
-                        Credits earned without S grade {" "}
-                        <input onChange={this.crChange} type="number"/>
+                    <div className="cg">
+                        <div>
+                            <label id="label1" htmlFor="cgpa">Your current CGPA</label>
+                            <input id="cgpa" step="any" onChange={this.cgChange} type="number" />
+                        </div>
+                        <div>    
+                            <label id="label2" htmlFor="credits">Credits earned without S grade </label>
+                            <input id="credits" onChange={this.crChange} type="number"/>
+                        </div>
                     </div>
-                    <div>
+                    
+                    <div className="inline field">
+                        <div className="ui checkbox">
                         Take S grade in 
-                        <Sgrade onCheck={this.onChecked} sub="BTN-202"/>
-                        <Sgrade onCheck={this.onChecked} sub="BTN-204"/>
-                        <Sgrade onCheck={this.onChecked} sub="BTN-206"/>
-                        <Sgrade onCheck={this.onChecked} sub="BTN-292"/>
-                        <Sgrade onCheck={this.onChecked} sub="BTN-391"/>
-                        <Sgrade onCheck={this.onChecked} sub="CEN-108"/>
+                            <Sgrade onCheck={this.onChecked} sub="BTN-202"/>
+                            <Sgrade onCheck={this.onChecked} sub="BTN-204"/>
+                            <Sgrade onCheck={this.onChecked} sub="BTN-206"/>
+                            <Sgrade onCheck={this.onChecked} sub="BTN-292"/>
+                            <Sgrade onCheck={this.onChecked} sub="BTN-391"/>
+                            <Sgrade onCheck={this.onChecked} sub="CEN-108"/>
+                        </div>
                     </div>
                     <div>
                         <input type="Submit" />

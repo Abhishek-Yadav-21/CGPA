@@ -1,5 +1,17 @@
-.a{
+.grade{
     display: flex;
-    float: left;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+/* .cg{
+    display: flex;
+} */
+#cgpa, #credits{
     width: 100%;
+}
+
+#label1, #label2{
+    display: block;
+    margin-bottom: 4px;
+    margin-top: 13px;
 }

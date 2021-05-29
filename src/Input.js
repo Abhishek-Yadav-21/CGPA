@@ -1,4 +1,5 @@
 import React from 'react';
+import './Input.css';
 
 class Input extends React.Component {
 
@@ -13,9 +14,9 @@ class Input extends React.Component {
 
     render(){
         return(
-            <div>
-                <label>Your grade point in {this.props.name}</label>
-                <input name={this.props.name} id="this.props.name" type = "number" onChange={this.onInputChange} />      
+            <div className="input">
+                <label htmlFor="i">{this.props.name}</label>
+                <input id="i" name={this.props.name} type = "number" onChange={this.onInputChange} />      
             </div>
   
         )
