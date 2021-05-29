@@ -171,7 +171,7 @@ class Form extends React.Component{
                             <Sgrade onCheck={this.onChecked} sub="CEN-108"/>
                         </div>
                     
-                    <div className="input">
+                    <div className="input1">
                         <input className="small ui button ui green button" type="Submit" value="Calculate"/>
                         <input className="small ui button ui blue button" id="reset" type="reset" onClick={e => this.setState({sgpa: '', cgpa: ''})} />
                     </div>
