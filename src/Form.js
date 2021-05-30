@@ -143,7 +143,7 @@ class Form extends React.Component{
                 <h1 id="h1">CGPA Calculator for Biotechnology</h1>
                 <form className="ui form" onSubmit={this.onFormSubmit}>
                     <h3>
-                        Your grade in:
+                        Your grade point in:
                     </h3>
                     <div className="grade">
                         <Input onChange={this.onInputChange} name="BTN-202"/>
