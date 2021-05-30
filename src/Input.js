@@ -16,7 +16,7 @@ class Input extends React.Component {
         return(
             <div className="input">
                 <label id="label" htmlFor="i">{this.props.name}</label>
-                <input id="i" name={this.props.name} type = "number" onChange={this.onInputChange} />      
+                <input id="i" name={this.props.name} type = "number" onChange={this.onInputChange} required max="10" min="4"/>      
             </div>
   
         )

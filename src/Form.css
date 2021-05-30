@@ -3,9 +3,10 @@
     justify-content: space-between;
     margin-bottom: 13px;
 }
-/* .cg{
-    display: flex;
-} */
+
+.sub{
+    padding-bottom: 10px;
+}
 #cgpa, #credits{
     width: 100%;
 }
@@ -35,6 +36,27 @@ div.input1{
     justify-content: space-around;
 }
 
+body{
+    margin-top: 20px;
+}
+
+#h1{
+    text-align: center;
+}
+.ui form{
+    border: 0.5px solid rgba(34,36,38,.15);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+#message{
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+#k{
+    color: white;
+}
 
 
 

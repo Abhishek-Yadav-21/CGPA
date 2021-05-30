@@ -8,7 +8,7 @@ var cg = [0,0];
 
 class Form extends React.Component{
 
-    state = {sgpa: '', cgpa: ''};
+    state = {sgpa: '', cgpa: '', message: ''};
     
 
     onFormSubmit = (event) => {
@@ -27,6 +27,11 @@ class Form extends React.Component{
         var k = (cg[0]*cg[1]+sg*tc);
         var total = parseInt(cg[1]) + tc;
         c = k/total;
+
+        if(parseInt(c)>=9)
+        {
+            this.setState({message: "Chup chap 500rs paytm krde chapo k, varna sabko bata dunga ki 9+ CG aayi hai :D"});
+        }
         
         this.setState({sgpa: sg, cgpa: c});
     }
@@ -135,6 +140,7 @@ class Form extends React.Component{
     render(){
         return(
             <div className="ui container">
+                <h1 id="h1">CGPA Calculator for Biotechnology</h1>
                 <form className="ui form" onSubmit={this.onFormSubmit}>
                     <h3>
                         Your grade in:
@@ -144,7 +150,7 @@ class Form extends React.Component{
                         <Input onChange={this.onInputChange} name="BTN-204"/>
                         <Input onChange={this.onInputChange} name="BTN-206"/>
                     </div>
-                    <div className="grade">
+                    <div className="grade sub">
                         <Input onChange={this.onInputChange} name="BTN-292"/>
                         <Input onChange={this.onInputChange} name="BTN-391"/>
                         <Input onChange={this.onInputChange} name="CEN-108"/>
@@ -152,11 +158,11 @@ class Form extends React.Component{
                     <div className="cg">
                         <div>
                             <label id="label1" htmlFor="cgpa"><h4>Your current CGPA:</h4></label>
-                            <input id="cgpa" step="any" onChange={this.cgChange} type="number" />
+                            <input id="cgpa" step="any" onChange={this.cgChange} type="number" required/>
                         </div>
                         <div>    
                             <label id="label2" htmlFor="credits"><h4>Credits earned without S grade:</h4> </label>
-                            <input id="credits" onChange={this.crChange} type="number"/>
+                            <input id="credits" onChange={this.crChange} type="number" required/>
                         </div>
                     </div>
                     
@@ -166,6 +172,8 @@ class Form extends React.Component{
                             <Sgrade onCheck={this.onChecked} sub="BTN-202"/>
                             <Sgrade onCheck={this.onChecked} sub="BTN-204"/>
                             <Sgrade onCheck={this.onChecked} sub="BTN-206"/>
+                        </div>
+                        <div className="ui checkbox">    
                             <Sgrade onCheck={this.onChecked} sub="BTN-292"/>
                             <Sgrade onCheck={this.onChecked} sub="BTN-391"/>
                             <Sgrade onCheck={this.onChecked} sub="CEN-108"/>
@@ -173,17 +181,23 @@ class Form extends React.Component{
                     
                     <div className="input1">
                         <input className="small ui button ui green button" type="Submit" value="Calculate"/>
-                        <input className="small ui button ui blue button" id="reset" type="reset" onClick={e => this.setState({sgpa: '', cgpa: ''})} />
+                        <input className="small ui button ui blue button" id="reset" type="reset" onClick={e => this.setState({sgpa: '', cgpa: '', message: ""})} />
                     </div>
                    
                     
                     <h3>
                         Your SGPA is: {this.state.sgpa}
                     </h3>
-                    <div>
+                    <h3>
                         Your CGPA is: {this.state.cgpa}
-                    </div>
+                    </h3>
+                    <h5 id="message">
+                        {this.state.message}
+                    </h5>
                 </form>
+                <div id="k">
+                      h
+                </div>
                 
             </div>
         )
