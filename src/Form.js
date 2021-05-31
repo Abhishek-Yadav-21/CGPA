@@ -158,7 +158,7 @@ class Form extends React.Component{
                     <div className="cg">
                         <div>
                             <label id="label1" htmlFor="cgpa"><h4>Your current CGPA:</h4></label>
-                            <input id="cgpa" step="any" onChange={this.cgChange} type="number" required/>
+                            <input id="cgpa" step="any" onChange={this.cgChange} type="number" required max="10"/>
                         </div>
                         <div>    
                             <label id="label2" htmlFor="credits"><h4>Credits earned without S grade:</h4> </label>
