@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from './Input';
 import './Form.css';
-import Sgrade from './Sgrade';
+// import Sgrade from './Sgrade';
 
 var gp = [[0,4], [0,4], [0,4], [0,4], [0,4], [0,3]];
 var cg = [0,0];
