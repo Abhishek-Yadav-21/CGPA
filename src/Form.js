@@ -3,7 +3,7 @@ import Input from './Input';
 import './Form.css';
 import Sgrade from './Sgrade';
 
-var gp = [[0,4], [0,4], [0,4], [0,3], [0,2], [0,4]];
+var gp = [[0,4], [0,4], [0,4], [0,4], [0,4], [0,3]];
 var cg = [0,0];
 
 class Form extends React.Component{
@@ -38,27 +38,27 @@ class Form extends React.Component{
     onInputChange(term, value){
 
         // console.log(value);
-        if(value === "BTN-202")
+        if(value === "BTN-301")
         {
             gp[0][0] = term;
         }
-        else if(value === "BTN-204")
+        else if(value === "BTN-303")
         {
             gp[1][0] = term;
         }
-        else if(value === "BTN-206")
+        else if(value === "BTN-305")
         {
             gp[2][0] = term;
         }
-        else if(value === "BTN-292")
+        else if(value === "BTN-342/347")
         {
             gp[3][0] = term;
         }
-        else if(value === "BTN-391")
+        else if(value === "BTN-208")
         {
             gp[4][0] = term;
         }
-        else if(value === "CEN-108")
+        else if(value === "IBM")
         {
             gp[5][0] = term;
         }
@@ -74,7 +74,7 @@ class Form extends React.Component{
     }
 
     onChecked(e, value){
-        if(value === "BTN-202")
+        if(value === "BTN-301")
         {
             if(e===true)
             {
@@ -84,7 +84,7 @@ class Form extends React.Component{
                 gp[0][1] = 4;
             }
         }
-        if(value === "BTN-204")
+        if(value === "BTN-303")
         {
             if(e===true)
             {
@@ -94,7 +94,7 @@ class Form extends React.Component{
                 gp[1][1] = 4;
             }
         }
-        if(value === "BTN-206")
+        if(value === "BTN-305")
         {
             if(e===true)
             {
@@ -104,34 +104,34 @@ class Form extends React.Component{
                 gp[2][1] = 4;
             }
         }
-        if(value === "BTN-292")
+        if(value === "BTN-342/347")
         {
             if(e===true)
             {
                 gp[3][1] = 0;
             }
             else{
-                gp[3][1] = 3;
+                gp[3][1] = 4;
             }
         }
-        if(value === "BTN-391")
+        if(value === "BTN-208")
         {
             if(e===true)
             {
                 gp[4][1] = 0;
             }
             else{
-                gp[4][1] = 2;
+                gp[4][1] = 4;
             }
         }
-        if(value === "CEN-108")
+        if(value === "IBM")
         {
             if(e===true)
             {
                 gp[5][1] = 0;
             }
             else{
-                gp[5][1] = 4;
+                gp[5][1] = 3;
             }
         }
         
@@ -146,14 +146,14 @@ class Form extends React.Component{
                         Your grade point in:
                     </h3>
                     <div className="grade">
-                        <Input onChange={this.onInputChange} name="BTN-202"/>
-                        <Input onChange={this.onInputChange} name="BTN-204"/>
-                        <Input onChange={this.onInputChange} name="BTN-206"/>
+                        <Input onChange={this.onInputChange} name="BTN-301"/>
+                        <Input onChange={this.onInputChange} name="BTN-303"/>
+                        <Input onChange={this.onInputChange} name="BTN-305"/>
                     </div>
                     <div className="grade sub">
-                        <Input onChange={this.onInputChange} name="BTN-292"/>
-                        <Input onChange={this.onInputChange} name="BTN-391"/>
-                        <Input onChange={this.onInputChange} name="CEN-108"/>
+                        <Input onChange={this.onInputChange} name="BTN-342/347"/>
+                        <Input onChange={this.onInputChange} name="BTN-208"/>
+                        <Input onChange={this.onInputChange} name="IBM"/>
                     </div>
                     <div className="cg">
                         <div>
@@ -167,17 +167,17 @@ class Form extends React.Component{
                     </div>
                     
                     {/* <div className="inline field"> */}
-                        <h3 id="h">Take S grade in:</h3>
+                        {/* <h3 id="h">Take S grade in:</h3>
                         <div className="ui checkbox">
-                            <Sgrade onCheck={this.onChecked} sub="BTN-202"/>
-                            <Sgrade onCheck={this.onChecked} sub="BTN-204"/>
-                            <Sgrade onCheck={this.onChecked} sub="BTN-206"/>
+                            <Sgrade onCheck={this.onChecked} sub="BTN-301"/>
+                            <Sgrade onCheck={this.onChecked} sub="BTN-303"/>
+                            <Sgrade onCheck={this.onChecked} sub="BTN-305"/>
                         </div>
                         <div className="ui checkbox">    
-                            <Sgrade onCheck={this.onChecked} sub="BTN-292"/>
-                            <Sgrade onCheck={this.onChecked} sub="BTN-391"/>
-                            <Sgrade onCheck={this.onChecked} sub="CEN-108"/>
-                        </div>
+                            <Sgrade onCheck={this.onChecked} sub="BTN-342/347"/>
+                            <Sgrade onCheck={this.onChecked} sub="BTN-20"/>
+                            <Sgrade onCheck={this.onChecked} sub="IBM"/>
+                        </div> */}
                     
                     <div className="input1">
                         <input className="small ui button ui green button" type="Submit" value="Calculate"/>

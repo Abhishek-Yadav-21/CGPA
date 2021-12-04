@@ -57,6 +57,8 @@ body{
 #k{
     color: white;
 }
+/* ============== */
 
-
-
+div.input1{
+    margin-top: 2rem;
+}
